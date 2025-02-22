@@ -2,9 +2,9 @@
 #define BOOK_H
 #include "product.h"
 
-class Book : public Product {
+class book : public Product {
   public:
-      Book(const std::string& name, const std::string& isbn, const std::string& author, double price, int qty);
+      book(const std::string& name, const std::string& isbn, const std::string& author, double price, int qty);
       std::set<std::string> keywords() const override;
       std::string displayString() const override;
       void dump(std::ostream& os) const override;
