@@ -19,7 +19,6 @@ class MyDataStore : public DataStore {
   public:
     MyDataStore();
     ~MyDataStore();
-
     void addProduct(Product* p) override;
     void addUser(User* u) override;
     std::vector<Product*> search(std::vector<std::string>& terms, int type) override;
@@ -27,6 +26,7 @@ class MyDataStore : public DataStore {
     void addToCart(const std::string& username, Product* p);
     void viewCart(const std::string& username);
     void buyCart(const std::string& username);
+    bool userExists(const std::string& username) const;
   private:
     std::set<Product*> products_;
     std::map<std::string, User*> users_;

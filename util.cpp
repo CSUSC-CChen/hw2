@@ -18,20 +18,23 @@ std::set<std::string> parseStringToWords(string rawWords)
     std::set<std::string> words;
     std::string word;
     for (char& c : rawWords) {
+        //Check if character is alphanumeric
         if (std::isalnum(c)) {
+            //Add valid character to current word buffer
             word += c;
         } else {
             if (word.length() >= 2) {
+                //Add valid-length word to set in lowercase
                 words.insert(convToLower(word));
             }
             word.clear();
         }
     }
+    //Process any remaining word after loop completes
     if (word.length() >= 2) {
         words.insert(convToLower(word));
     }
     return words;
-
 }
 
 /**************************************************

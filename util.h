@@ -17,8 +17,10 @@ std::set<T> setIntersection(std::set<T>& s1, std::set<T>& s2)
     typename std::set<T>::iterator it1 = s1.begin();
     typename std::set<T>::iterator it2 = s2.begin();
     while (it1 != s1.end() && it2 != s2.end()) {
+        //Element exists only in s1
         if (*it1 < *it2) {
             ++it1;
+        // Element exists only in s2
         } else if (*it2 < *it1) {
             ++it2;
         } else {
@@ -29,12 +31,13 @@ std::set<T> setIntersection(std::set<T>& s1, std::set<T>& s2)
     }
     return result;
 
-
 }
 template <typename T>
 std::set<T> setUnion(std::set<T>& s1, std::set<T>& s2)
 {
+    //Start with all elements from first set
     std::set<T> result = s1;
+    //add elements from second set
     result.insert(s2.begin(), s2.end());
     return result;
 }

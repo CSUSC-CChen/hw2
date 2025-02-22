@@ -105,11 +105,19 @@ int main(int argc, char* argv[])
                 string username;
                 int index;
                 if (ss >> username >> index) {
-                    if (index > 0 && index <= static_cast<int>(hits.size()))
+                    if (!ds.userExists(username)) {
+                        cout << "Invalid request" << endl << flush;
+                    }
+                    else if (index < 1 || index > static_cast<int>(hits.size())) {
+                        std::cout << "Invalid search result number" << std::endl;
+                    }
+                    else {
                         ds.addToCart(username, hits[index-1]);
-                    else cout << "Invalid search result number" << endl;
+                    }
                 }
-                else cout << "Invalid ADD command format" << endl;
+                else {
+                    std::cout << "Invalid ADD command format" << std::endl;
+                }
             }
             else if ( cmd == "VIEWCART") {
                 string username;
@@ -133,7 +141,7 @@ int main(int argc, char* argv[])
 void displayProducts(vector<Product*>& hits)
 {
     int resultNo = 1;
-    if (hits.begin() == hits.end()) {
+    if (hits.empty()) {
     	cout << "No results found!" << endl;
     	return;
     }

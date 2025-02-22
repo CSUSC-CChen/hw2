@@ -8,12 +8,11 @@
 
 Book::Book(const std::string& name, const std::string& isbn, const std::string& author, double price, int qty)
     : Product("book", name, price, qty), isbn_(isbn), author_(author) {}
-
-std::set<std::string> Book::keywords() const{
+std::set<std::string> Book::keywords() const {
     std::set<std::string> keys = parseStringToWords(name_);
     std::set<std::string> author_keys = parseStringToWords(author_);
     keys.insert(author_keys.begin(), author_keys.end());
-    keys.insert(isbn_);
+    keys.insert(isbn_);  // Ensure ISBN is included
     return keys;
 }
 std::string Book::displayString() const {
