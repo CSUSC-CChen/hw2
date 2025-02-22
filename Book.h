@@ -1,7 +1,3 @@
-//
-// Created by Leo on 2/18/25.
-//
-
 #ifndef BOOK_H
 #define BOOK_H
 #include "product.h"

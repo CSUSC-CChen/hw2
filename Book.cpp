@@ -1,7 +1,3 @@
-//
-// Created by Leo on 2/18/25.
-//
-
 #include "Book.h"
 #include "util.h"
 #include <sstream>

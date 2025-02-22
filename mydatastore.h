@@ -1,7 +1,3 @@
-//
-// Created by Leo on 2/20/25.
-//
-
 #ifndef MYDATASTORE_H
 #define MYDATASTORE_H
 

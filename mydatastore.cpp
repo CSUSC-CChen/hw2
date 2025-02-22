@@ -1,7 +1,3 @@
-//
-// Created by Leo on 2/20/25.
-//
-
 #include "mydatastore.h"
 #include <iostream>
 
